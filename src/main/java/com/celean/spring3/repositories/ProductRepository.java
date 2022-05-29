@@ -35,4 +35,14 @@ public class ProductRepository {
     public Product findById(Long id) {
         return products.stream().filter(s -> s.getId().equals(id)).findFirst().orElse(null);
     }
+    public void increaseCost(Long id){
+        findById(id).setCost(findById(id).getCost() + 1);
+    }
+    public void decreaseCost(Long id){
+        if (findById(id).getCost()>1) {
+            findById(id).setCost(findById(id).getCost() - 1);
+        }else {
+            findById(id).setCost(0.0);
+        }
+    }
 }

@@ -26,4 +26,10 @@ public class ProductService {
     public Product findById(Long id) {
         return productRepository.findById(id);
     }
+    public void increaseCost(Long id){
+        productRepository.increaseCost(id);
+    }
+    public void decreaseCost(Long id){
+        productRepository.decreaseCost(id);
+    }
 }
